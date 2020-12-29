@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
-    <title>Pi Calculator</title>
+    <title>π Calculator</title>
 </head>
 <body>
     <main>
@@ -13,23 +13,38 @@
             <div class="middlepane">
                 <article id="decription">
                     <h1>
-                        This is the least efficient Pi number estimator
+                        This is the least efficient <span>π</span> number calculator
                     </h1>
                     <p>
-                        Having a wall and two ideal, perfectly elastic objects with a given mass we can estimate pi number to a given aproximation.
+                        Having a wall and two ideal, perfectly elastic objects with a given mass we can get given <span>π</span> number aproximation.                  <a href="https://www.youtube.com/watch?v=jsYwFizhncE">Explanation link.</a><br><br>
+                        <img src="images/1.jpg" width="400px" alt="two blocks screen">
+                        <br><br>
+                        The mass of the left block is greater than the right one with a given formula:
+                    </p>
+                    <pre>mass_right_block = 1<br>mass_left_block = 10 ^ (k-1)</pre><p id="last-paragraph">
+                        The result is k-number of <span>π</span> digits aproximated.
                     </p>
                 </article>
+
+                <hr>
+
+                <p>
+                    Try it yourself! (You can make many animations at the same time &#128521;) 
+                </p>
                 <div class="input-box">
                     <input type="number" id="k-value" name="k-value"  placeholder="k-value"/>
-                    <div class="err-msg hidden">Number must be greater or equal 0 and less then 8</div>
-                    <button id="submit-btn">Go!</button>
+                    <div class="err-msg hidden">Number must be greater or equal 1 and less or equal 8</div>
+                    <br>
+                    <button id="submit-btn" class="control-btn">Go!</button>
+                    <button id="clear-btn" class="control-btn hidden">Clear</button>
                 </div>
                 <div id="animation-box" class="animation-box">
-
+                
                 </div>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
+    <audio src="utils/clack.wav" id="clack"></audio>
 </body>
 </html>

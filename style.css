@@ -20,7 +20,8 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
 }
- 
+
+
 /* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
@@ -48,14 +49,35 @@ body {
 }
 
 h1 {
-	font-size: 2.0em;
+	font-size: 2.2em;
 	border-bottom: 5px solid;
 	padding: 10px 0 15px 0;
 }
 
 p{
-	font-size: 1.3em;
+	font-size: 1.5em;
 	padding: 30px 10px 10px 10px;
+}
+
+span{
+	font-size: 1.3em;
+}
+
+pre{
+	font-size: 1.1em;
+}
+
+#last-paragraph{
+	padding: 10px 10px 30px 10px;
+}
+
+a{
+	text-decoration: none;
+	color: blueviolet;
+}
+
+hr{
+	border: 3px solid;
 }
 
 #k-value {
@@ -77,9 +99,10 @@ p{
 
 .hidden {
 	opacity: 0;
+	display: none;
 }
 
-#submit-btn {
+.control-btn {
 	font-size: 1.3em;
 	background-color: yellow;
 	padding: 15px;

@@ -91,7 +91,7 @@ class Animation{
         this.ctx.scale(1, -1);
         this.ctx.fillStyle = 'rgba(133, 9, 138, 0.856)';
         this.ctx.font = '20px Goldman';
-        this.ctx.fillText('k = ' + this.kValue + `      PI = `+ Math.PI + `     count = ` + this.count, this.leftBorder, 20);
+        this.ctx.fillText('k = ' + this.kValue + `      PI = `+ Math.PI + `     collisions = ` + this.count, this.leftBorder, 20);
         this.ctx.scale(1, -1);
     }
 

@@ -87,6 +87,8 @@ hr{
 	color:rgba(0, 0, 0, 0.712);
 	outline: none;
 	width: 150px;
+	background-color: rgba(0, 0, 0, 0.349);
+	border-radius: 15px;
 }
 
 .err-msg{

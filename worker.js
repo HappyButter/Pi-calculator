@@ -33,7 +33,9 @@ class Animation{
         this.kValue = kValue;
         
         this.timeSteps = Math.pow(10, kValue);
-        this.count = 0;
+        this.expectedAproximationNumber = Math.floor(Math.PI * this.timeSteps);
+        this.isLastFrame = true;
+        this.collisionsCount = 0;
 
         this.leftBorder = 10;
         this.rightBorder = this.width - 80;
@@ -51,7 +53,7 @@ class Animation{
         const blockLeft = new Block(
             this.leftBorder,    // posX,
             50,                 // sideLen,
-            5/this.timeSteps,   // velocity,
+            4/this.timeSteps,   // velocity,
             m);                 // mass
 
         const blockRight = new Block(
@@ -91,7 +93,7 @@ class Animation{
         this.ctx.scale(1, -1);
         this.ctx.fillStyle = 'rgba(133, 9, 138, 0.856)';
         this.ctx.font = '20px Goldman';
-        this.ctx.fillText('k = ' + this.kValue + `      PI = `+ Math.PI + `     collisions = ` + this.count, this.leftBorder, 20);
+        this.ctx.fillText('k = ' + this.kValue + `      PI = `+ Math.PI + `     collisions = ` + this.collisionsCount, this.leftBorder, 20);
         this.ctx.scale(1, -1);
     }
 
@@ -116,13 +118,13 @@ class Animation{
                 this.blocks[0].V = V0_prim;
                 this.blocks[1].V = V1_prim;
 
-                this.count++;
+                this.collisionsCount++;
             }
     
             // wall collision
             if(this.blocks[1].x >= this.rightBorder){
                 this.blocks[1].reverse();
-                this.count++;
+                this.collisionsCount++;
             }
 
             // update pos
@@ -137,10 +139,32 @@ class Animation{
         this.ctx.scale(1, -1);  
     }
 
+    isFinished(){
+        return (this.collisionsCount === this.expectedAproximationNumber); 
+    }
+
+    drawEndFrame(){
+        this.ctx.scale(1, -1);
+        this.ctx.fillStyle = 'rgba(133, 9, 138, 0.856)';
+        this.ctx.font = '60px Goldman';
+        this.ctx.fillText('The End', this.mid - 90, this.height / 2  - 10 );
+        this.ctx.scale(1, -1);
+    }
+    
     step(){
         this.clearContext();
         this.drawFrame();
-        requestAnimationFrame(()=>this.step())
+
+        if(!this.isFinished()){
+            requestAnimationFrame(()=>this.step());
+        }else if(this.isLastFrame){
+            setTimeout(() => {
+                this.isLastFrame = false; 
+            }, 1000); // set 1 second of animation befor the end
+            requestAnimationFrame(()=>this.step());
+        } else {
+            this.drawEndFrame(); // draw the end screen
+        }
     }
 
     animate(){

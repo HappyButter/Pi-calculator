@@ -45,8 +45,8 @@ const createCanvasElement = () => {
 
     const canvas = document.createElement('canvas');
     
-    canvas.style.width = 0.5*vw;
-    canvas.style.height = 400;
+    canvas.style.width = 0.5*vw + "px";
+    canvas.style.height = 400 + "px";
     canvas.width = 0.5*vw;
     canvas.height = 400;
     canvas.classList.add("animation");
@@ -64,7 +64,6 @@ const animate = () => {
         showClearBtn();
         
         let offscreen = canvas.transferControlToOffscreen();
-        let clackSound = document.getElementById("clack");
 
         let worker = new Worker("worker.js");
         worker.postMessage({canvas : offscreen, k : parseInt(k.value)}, [offscreen]);

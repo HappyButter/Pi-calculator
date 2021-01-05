@@ -156,9 +156,14 @@ hr{
 
 /* technologies */
 #technologies-content {
-	font-size: 1.1em;
+	font-size: 1.4em;
 }
 
 #technologies-content ul{
     list-style-type: none;
 }
+
+#technologies-content ul{
+	font-size: 0.8em;
+}
+

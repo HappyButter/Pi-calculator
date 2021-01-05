@@ -9,22 +9,30 @@
 </head>
 <body>
     <main>
-        <div class="content-box">
-            <div class="middlepane">
-                <article id="decription">
-                    <h1>
-                        This is the least efficient <span>π</span> number calculator
-                    </h1>
-                    <p>
-                        Having a wall and two ideal, perfectly elastic objects with a given mass we can get given <span>π</span> number approximation.                  <a href="https://www.youtube.com/watch?v=jsYwFizhncE">Explanation link.</a><br><br>
-                        <img src="images/1.jpg" width="400" alt="two blocks screen">
-                        <br><br>
-                        The mass of the left block is greater than the right one with a given formula:
-                    </p>
-                    <pre>mass_right_block = 1<br>mass_left_block = 100 ^ (k-1)</pre><p id="last-paragraph">
-                        The result is k-number of <span>π</span> digits approximated.
-                    </p>
-                </article>
+        <div class="middlepane">
+            <h1>
+                This is the least efficient <span>π</span> number calculator
+            </h1>
+                
+            <div id="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="#" id="home">Home</a></li>
+                        <li><a href="#" id="technologies" >Technologies</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="home-content">
+                <p>
+                    Having a wall and two ideal, perfectly elastic objects with a given mass we can get given <span>π</span> number approximation.                  <a href="https://www.youtube.com/watch?v=jsYwFizhncE">Explanation link.</a><br><br>
+                    <img src="images/1.jpg" width="400" alt="two blocks screen">
+                    <br><br>
+                    The mass of the left block is greater than the right one with a given formula:
+                </p>
+                <pre>mass_right_block = 1<br>mass_left_block = 100 ^ (k-1)</pre><p id="last-paragraph">
+                    The result is k-number of <span>π</span> digits approximated.
+                </p>
 
                 <hr>
 
@@ -38,9 +46,30 @@
                     <button id="submit-btn" class="control-btn">Go!</button>
                     <button id="clear-btn" class="control-btn hidden">Clear</button>
                 </div>
-                <div id="animation-box" class="animation-box">
-                
-                </div>
+                <div id="animation-box" class="animation-box"></div>
+            </div>
+            <div id="technologies-content" class="hidden">
+                <p>
+                    Technologies used in the project:
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript </li>
+                        <li>Web Workers</li>
+                        <li>OffscreenCanvas</li>
+                    </ul>
+                </p>
+                <p>
+                    Browser minimum version required:
+                    <ul>
+                        <li>Chrome - version 69</li>
+                        <li>Edge - version 79</li>
+                        <li>OperaFull - version 56</li>
+                    </ul>
+                    <br><br>
+                    <img src="images/logo.png" type="png" width="400">
+                    <br><br>
+                </p>
             </div>
         </div>
     </main>

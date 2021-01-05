@@ -2,6 +2,10 @@ const k = document.getElementById("k-value");
 const submitBtn = document.getElementById("submit-btn");
 const clearBtn = document.getElementById("clear-btn");
 const animationBox = document.getElementById("animation-box");
+const homeNavBtn = document.getElementById("home");
+const technologiesNavBtn = document.getElementById("technologies");
+const homeContent = document.getElementById("home-content");
+const technologiesContent = document.getElementById("technologies-content");
 
 // -------------------------- Validation --------------------------
 
@@ -73,3 +77,13 @@ const animate = () => {
 // button listeners 
 submitBtn.addEventListener('click', animate);
 clearBtn.addEventListener('click', clearAnimationBox);
+
+homeNavBtn.addEventListener('click', () => {
+    homeContent.classList.remove("hidden");
+    technologiesContent.classList.add("hidden");
+});
+
+technologiesNavBtn.addEventListener('click', () => {
+    homeContent.classList.add("hidden");
+    technologiesContent.classList.remove("hidden");
+})
